@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { registerSharedComponents } from '../../src/components'
+import { registerSharedComponents } from '../../src/Infrastructure/Vue/components'
 import Router from 'vue-router'
 registerSharedComponents()
 
