@@ -24,7 +24,7 @@ describe('HelloWorld.vue', () => {
     const listOfArtist = page.getListOfArtist()
     expect(page.getBlockQuoteTextContent()).toEqual('First, solve the problem. Then, write the code.')
     expect(listOfArtist.length).toEqual(1)
-    expect([].slice.call(listOfArtist).pop().textContent).toContain('fake artist')
+    expect(Array.from(listOfArtist).pop().textContent).toContain('fake artist')
     expect(ArtistRepository.getTopArtistsByCountry).toHaveBeenCalled()
   })
 })
