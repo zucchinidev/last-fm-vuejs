@@ -1,7 +1,7 @@
 {
   "name": "last-fm-vuejs",
   "version": "1.0.0",
-  "description": "SPA with Vue.js and Last FM API",
+  "description": "SPA with Vue.js and using Last FM API",
   "author": "Andrea Zucchini García <azga84@gmail.com>",
   "private": true,
   "scripts": {
