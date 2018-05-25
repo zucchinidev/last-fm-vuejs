@@ -9,6 +9,8 @@ module.exports = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^@Vue/(.*)$': '<rootDir>/src/Infrastructure/Vue/$1',
+    '^@unit/(.*)$': '<rootDir>/test/unit/$1',
     '\\.(css|less|styl)$': 'identity-obj-proxy'
   },
   transform: {
