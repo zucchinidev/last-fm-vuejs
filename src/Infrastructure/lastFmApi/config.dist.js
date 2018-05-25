@@ -1,0 +1,6 @@
+export default {
+  applicationName: 'INSERT YOUR APPLICATION NAME HERE',
+  apiKey: 'INSERT YOUR LAST FM API KEY HERE',
+  sharedSecret: 'INSERT YOUR LAST FM SHARED SECRET KEY HERE',
+  registeredTo: 'INSERT REGISTER TO HERE'
+}
