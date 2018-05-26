@@ -12,6 +12,7 @@ import {
   transitions
 } from 'vuetify'
 import '../../../../node_modules/vuetify/src/stylus/app.styl'
+import ArtistListItem from './ArtistListItem/ArtistListItem'
 
 export function registerSharedComponents () {
   Vue.use(Vuetify, {
@@ -27,4 +28,5 @@ export function registerSharedComponents () {
       transitions
     }
   })
+  Vue.component('ArtistListItem', ArtistListItem)
 }
