@@ -1,4 +1,4 @@
-import { mount, shallow } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import Vue from 'vue'
 
 export function WrapComponent (component) {
@@ -14,8 +14,8 @@ class Wrap {
     return mount(this.component, this.config())
   }
 
-  shallow () {
-    return shallow(this.component, this.config())
+  shallowMount () {
+    return shallowMount(this.component, this.config())
   }
 
   withProps (props) {
