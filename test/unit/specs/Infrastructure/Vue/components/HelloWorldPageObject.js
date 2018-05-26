@@ -1,4 +1,5 @@
 import PageObject from '@unit/PageObject'
+import ArtistListItem from '@Vue/components/ArtistListItem/ArtistListItem'
 
 export default class HelloWorldPageObject extends PageObject {
   getBlockQuoteTextContent () {
@@ -6,6 +7,6 @@ export default class HelloWorldPageObject extends PageObject {
   }
 
   getListOfArtist () {
-    return this.wrapper.vm.$el.querySelectorAll('li')
+    return this.wrapper.findAll(ArtistListItem)
   }
 }
