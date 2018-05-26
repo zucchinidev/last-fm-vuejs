@@ -5,7 +5,7 @@
         <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
         <blockquote>First, solve the problem. Then, write the code.</blockquote>
         <ul>
-          <li v-for="artist in artists">{{artist.name}}</li>
+          <ArtistListItem v-for="(artist, index) in artists" :key="index" :artist="artist"></ArtistListItem>
         </ul>
       </v-layout>
     </v-slide-y-transition>
@@ -26,22 +26,18 @@ export default {
   }
 }
 </script>
-<style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
+<style scoped lang="stylus">
+  h1, h2
+    font-weight normal
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+  ul
+    list-style-type none
+    padding 0
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
+  li
+    display inline-block
+    margin 0 10px
 
-  a {
-    color: #42b983;
-  }
+  a
+    color #42b983
 </style>
