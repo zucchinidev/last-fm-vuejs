@@ -7,7 +7,9 @@ jest.mock('@/Artist/Domain/ArtistRepository', () => {
   return {
     ArtistRepository: {
       getTopArtistsByCountry: jest.fn(() => Promise.resolve([{
-        name: 'fake artist'
+        name: 'fake artist',
+        images: [{size: 'medium', url: ''}],
+        url: 'fake artist url'
       }]))
     }
   }
@@ -17,14 +19,22 @@ describe('HelloWorld.vue', () => {
   /** @type HelloWorldPageObject */
   let page
   beforeEach(() => {
+    ArtistRepository.getTopArtistsByCountry.mockClear()
     wrapper = WrapComponent(HelloWorld).mount()
     page = new HelloWorldPageObject(wrapper)
   })
-  it('should render correct contents', () => {
+  it('should render correct contents', async () => {
+    await page.wait()
     const listOfArtist = page.getListOfArtist()
-    expect(page.getBlockQuoteTextContent()).toEqual('First, solve the problem. Then, write the code.')
+    const item = listOfArtist.at(0)
     expect(listOfArtist.length).toEqual(1)
-    expect(Array.from(listOfArtist).pop().textContent).toContain('fake artist')
+    expect(page.getBlockQuoteTextContent()).toEqual('First, solve the problem. Then, write the code.')
+    expect(item.is('li')).toBe(true)
+    expect(item.contains('h2')).toBe(true)
+    expect(item.contains('a')).toBe(true)
+    expect(item.contains('img')).toBe(true)
+    expect(item.find('a').html()).toContain('fake artist')
+    expect(item.vm.$el.querySelector('a').href).toEqual('fake artist url')
     expect(ArtistRepository.getTopArtistsByCountry).toHaveBeenCalled()
   })
 })
