@@ -9,7 +9,6 @@
     prepend-icon="search"
     dark
     clearable
-    v-bind="$attr"
   ></v-text-field>
 </template>
 <script>

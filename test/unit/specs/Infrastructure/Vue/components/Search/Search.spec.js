@@ -8,10 +8,12 @@ describe('Search.vue', () => {
   let page
   let props
   beforeEach(() => {
+    const spy = jest.spyOn(console, 'error').mockImplementation(() => {})
     value = '       fake_value'
     props = { value }
     wrapper = WrapComponent(Search).withProps(props).mount()
     page = new SearchPageObject(wrapper)
+    spy.mockReset()
   })
 
   it('should correctly insert the value in the input field', () => {
