@@ -1,18 +1,18 @@
 <template>
   <v-container fluid>
     <v-flex xs12>
-      <Search
+      <search
         label="Search"
         v-model="searchTerm"
         @input="onSearchTerm"
-      ></Search>
+      ></search>
     </v-flex>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
         <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
         <blockquote>First, solve the problem. Then, write the code.</blockquote>
         <ul>
-          <TrackListItem v-for="(track, index) in tracks" :key="index" :track="track"></TrackListItem>
+          <track-list-item v-for="(track, index) in tracks" :key="index" :track="track"></track-list-item>
         </ul>
       </v-layout>
     </v-slide-y-transition>
