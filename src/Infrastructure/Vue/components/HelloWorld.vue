@@ -1,5 +1,12 @@
 <template>
   <v-container fluid>
+    <v-flex xs12>
+      <Search
+        label="Search"
+        v-model="searchTerm"
+        @input="onSearchTerm"
+      ></Search>
+    </v-flex>
     <v-slide-y-transition mode="out-in">
       <v-layout column align-center>
         <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
@@ -18,11 +25,18 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      tracks: []
+      tracks: [],
+      searchTerm: ''
     }
   },
-  async mounted () {
-    this.tracks = await TrackRepository.searchTrack('muchacha')
+  methods: {
+    async onSearchTerm (term) {
+      if (term && term.length >= 3) {
+        this.tracks = await TrackRepository.searchTrack(term)
+      } else {
+        this.tracks = []
+      }
+    }
   }
 }
 </script>
