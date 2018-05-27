@@ -11,9 +11,12 @@ import {
   VToolbar,
   transitions
 } from 'vuetify'
+import { VTextField } from 'vuetify/es5/components'
+
 import '../../../../node_modules/vuetify/src/stylus/app.styl'
 import ArtistListItem from './ArtistListItem/ArtistListItem'
 import TrackListItem from './TrackListItem/TrackListItem'
+import Search from './Search/Search'
 
 export function registerSharedComponents () {
   Vue.use(Vuetify, {
@@ -26,9 +29,11 @@ export function registerSharedComponents () {
       VIcon,
       VGrid,
       VToolbar,
-      transitions
+      transitions,
+      VTextField
     }
   })
   Vue.component('ArtistListItem', ArtistListItem)
   Vue.component('TrackListItem', TrackListItem)
+  Vue.component('Search', Search)
 }
