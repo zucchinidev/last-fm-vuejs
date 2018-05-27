@@ -5,24 +5,24 @@
         <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
         <blockquote>First, solve the problem. Then, write the code.</blockquote>
         <ul>
-          <ArtistListItem v-for="(artist, index) in artists" :key="index" :artist="artist"></ArtistListItem>
+          <TrackListItem v-for="(track, index) in tracks" :key="index" :track="track"></TrackListItem>
         </ul>
       </v-layout>
     </v-slide-y-transition>
   </v-container>
 </template>
 <script>
-import { ArtistRepository } from '../../../Artist/Domain/ArtistRepository'
+import { TrackRepository } from '../../../Track/Domain/TrackRepository'
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      artists: []
+      tracks: []
     }
   },
   async mounted () {
-    this.artists = await ArtistRepository.getTopArtistsByCountry()
+    this.tracks = await TrackRepository.searchTrack('muchacha')
   }
 }
 </script>
