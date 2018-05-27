@@ -4,8 +4,8 @@
       <a :href="artist.url" target="_blank">
         {{artist.name}}
       </a>
-      <img :src="getImage()" alt="artist image">
     </h2>
+    <img :src="getImage()" alt="artist image">
   </li>
 </template>
 <script>
