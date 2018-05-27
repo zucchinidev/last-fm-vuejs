@@ -16,15 +16,19 @@ describe('HelloWorld.vue', () => {
   /** @type HelloWorldPageObject */
   let page
   beforeEach(() => {
+    const spy = jest.spyOn(console, 'error').mockImplementation(() => {})
     TrackRepository.searchTrack.mockClear()
     wrapper = WrapComponent(HelloWorld).mount()
     page = new HelloWorldPageObject(wrapper)
+    spy.mockReset()
   })
   it('should render correct contents', async () => {
+    page.writeSearchTermAsync('muchacha')
     await page.wait()
-    const listOfArtist = page.getListOfTracks()
-    expect(listOfArtist.length).toEqual(1)
+    const listOfTracks = page.getListOfTracks()
+    expect(listOfTracks.length).toEqual(1)
     expect(page.getBlockQuoteTextContent()).toEqual('First, solve the problem. Then, write the code.')
     expect(TrackRepository.searchTrack).toHaveBeenCalled()
+    expect(TrackRepository.searchTrack).toHaveBeenCalledWith('muchacha')
   })
 })
