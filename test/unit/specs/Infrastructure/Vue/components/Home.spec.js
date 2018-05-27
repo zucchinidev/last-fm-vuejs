@@ -1,7 +1,7 @@
-import HelloWorld from '@Vue/components/HelloWorld'
+import Home from '@Vue/components/Home'
 import { TrackRepository } from '@/Track/Domain/TrackRepository'
 import { WrapComponent } from '../../../../helpers'
-import HelloWorldPageObject from './HelloWorldPageObject'
+import HomePageObject from './HomePageObject'
 import { track } from '../../../../fixtures/trackFixture'
 const mockTrack = track
 jest.mock('@/Track/Domain/TrackRepository', () => {
@@ -11,15 +11,15 @@ jest.mock('@/Track/Domain/TrackRepository', () => {
     }
   }
 })
-describe('HelloWorld.vue', () => {
+describe('Home.vue', () => {
   let wrapper
-  /** @type HelloWorldPageObject */
+  /** @type HomePageObject */
   let page
   beforeEach(() => {
     const spy = jest.spyOn(console, 'error').mockImplementation(() => {})
     TrackRepository.searchTrack.mockClear()
-    wrapper = WrapComponent(HelloWorld).mount()
-    page = new HelloWorldPageObject(wrapper)
+    wrapper = WrapComponent(Home).mount()
+    page = new HomePageObject(wrapper)
     spy.mockReset()
   })
   it('should render correct contents', async () => {

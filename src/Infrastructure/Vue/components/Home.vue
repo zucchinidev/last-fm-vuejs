@@ -22,7 +22,7 @@
 import { TrackRepository } from '../../../Track/Domain/TrackRepository'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data () {
     return {
       tracks: [],
