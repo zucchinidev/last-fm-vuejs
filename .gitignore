@@ -6,3 +6,4 @@ npm-debug.log*
 selenium-debug.log
 src/Infrastructure/lastFmApi/config.js
 .idea
+env/
