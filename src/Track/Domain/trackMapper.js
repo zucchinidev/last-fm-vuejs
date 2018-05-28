@@ -4,6 +4,7 @@ export default (data) => {
   const artists = (data.album.artists || []).map(artist => artist.name)
   const images = data.album.images || {}
   return new Track({
+    id: data.id,
     album: {
       artists,
       name: data.album.name,
