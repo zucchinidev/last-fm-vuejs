@@ -16,6 +16,15 @@ exports[`TrackCardItem.vue should has correct html 1`] = `
                         <div class="card__media__background"></div>
                         <div class="card__media__content"></div>
                     </div>
+                    <div class="card__actions">
+                        <div class="spacer"></div>
+                        <button type="button" class="btn btn--icon">
+                            <div class="btn__content">
+                                <i aria-hidden="true" class="icon material-icons">play_arrow</i>
+                            </div>
+                        </button>
+                        <div class="spacer"></div>
+                    </div>
                 </div>
             </div>
         </div>
