@@ -1,5 +1,5 @@
 import PageObject from '@unit/PageObject'
-import TrackListItem from '@Vue/components/TrackListItem/TrackListItem'
+import TrackCardItem from '@Vue/components/TrackCardItem/TrackCardItem'
 import Search from '@Vue/components/Search/Search'
 
 export default class HomePageObject extends PageObject {
@@ -13,6 +13,6 @@ export default class HomePageObject extends PageObject {
   }
 
   getListOfTracks () {
-    return this.wrapper.findAll(TrackListItem)
+    return this.wrapper.findAll(TrackCardItem)
   }
 }

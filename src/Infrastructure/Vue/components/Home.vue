@@ -6,16 +6,16 @@
         v-model="searchTerm"
         @input="onSearchTerm"
       ></search>
+      <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
+      <blockquote>First, solve the problem. Then, write the code.</blockquote>
     </v-flex>
-    <v-slide-y-transition mode="out-in">
-      <v-layout column align-center>
-        <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
-        <blockquote>First, solve the problem. Then, write the code.</blockquote>
-        <ul>
-          <track-list-item v-for="(track, index) in tracks" :key="index" :track="track"></track-list-item>
-        </ul>
-      </v-layout>
-    </v-slide-y-transition>
+    <v-container v-bind="{'grid-list-lg': true}" fluid>
+      <v-slide-y-transition mode="out-in">
+        <v-layout row wrap>
+          <track-card-item v-for="(track, index) in tracks" :key="index" :track="track"></track-card-item>
+        </v-layout>
+      </v-slide-y-transition>
+    </v-container>
   </v-container>
 </template>
 <script>
