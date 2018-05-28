@@ -11,11 +11,11 @@ import {
   VToolbar,
   transitions
 } from 'vuetify'
-import { VTextField } from 'vuetify/es5/components'
+import { VTextField, VCard } from 'vuetify/es5/components'
 
 import '../../../../node_modules/vuetify/src/stylus/app.styl'
 import ArtistListItem from './ArtistListItem/ArtistListItem'
-import TrackListItem from './TrackListItem/TrackListItem'
+import TrackCardItem from './TrackCardItem/TrackCardItem'
 import Search from './Search/Search'
 
 export function registerSharedComponents () {
@@ -30,10 +30,11 @@ export function registerSharedComponents () {
       VGrid,
       VToolbar,
       transitions,
-      VTextField
+      VTextField,
+      VCard
     }
   })
   Vue.component('ArtistListItem', ArtistListItem)
-  Vue.component('TrackListItem', TrackListItem)
+  Vue.component('TrackCardItem', TrackCardItem)
   Vue.component('Search', Search)
 }
