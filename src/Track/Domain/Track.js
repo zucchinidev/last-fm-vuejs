@@ -3,8 +3,10 @@ const availableSizes = {
   medium: 300,
   big: 640
 }
+
 export class Track {
-  constructor ({ album, duration, name, popularity, images } = {}) {
+  constructor ({ album, duration, name, popularity, images, id } = {}) {
+    this.id = id
     this.album = album
     this.duration = duration
     this.name = name
