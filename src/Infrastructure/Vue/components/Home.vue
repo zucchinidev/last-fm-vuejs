@@ -12,7 +12,13 @@
     <v-container v-bind="{'grid-list-lg': true}" fluid>
       <v-slide-y-transition mode="out-in">
         <v-layout row wrap>
-          <track-card-item v-for="(track, index) in tracks" :key="index" :track="track"></track-card-item>
+          <track-card-item
+            v-for="(track, index) in tracks"
+            :key="index"
+            :track="track"
+            :class="{'is-active': track.id === selectedTrack}"
+            @selectTrack="onSelectTrack"
+          ></track-card-item>
         </v-layout>
       </v-slide-y-transition>
     </v-container>
@@ -26,7 +32,8 @@ export default {
   data () {
     return {
       tracks: [],
-      searchTerm: ''
+      searchTerm: '',
+      selectedTrack: ''
     }
   },
   methods: {
@@ -36,11 +43,14 @@ export default {
       } else {
         this.tracks = []
       }
+    },
+    onSelectTrack (id) {
+      this.selectedTrack = id
     }
   }
 }
 </script>
-<style scoped lang="stylus">
+<style lang="stylus">
   h1, h2
     font-weight normal
 
@@ -54,4 +64,8 @@ export default {
 
   a
     color #42b983
+
+  .is-active
+    > div
+      border solid 3px #23d160
 </style>
