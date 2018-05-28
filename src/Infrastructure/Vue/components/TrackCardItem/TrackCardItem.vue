@@ -15,6 +15,13 @@
               height="125px"
               contain
             ></v-card-media>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn icon @click="selectTrack">
+                <v-icon>play_arrow</v-icon>
+              </v-btn>
+              <v-spacer></v-spacer>
+            </v-card-actions>
           </v-flex>
         </v-layout>
       </v-container>
@@ -41,6 +48,11 @@ export default {
         }
       }
       return url
+    }
+  },
+  methods: {
+    selectTrack () {
+      this.$emit('selectTrack', this.track.id)
     }
   }
 }
