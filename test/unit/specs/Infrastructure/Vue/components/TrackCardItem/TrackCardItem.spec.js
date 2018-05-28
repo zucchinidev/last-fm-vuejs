@@ -1,26 +1,26 @@
-import TrackListItem from '@Vue/components/TrackListItem/TrackListItem'
+import TrackCardItem from '@Vue/components/TrackCardItem/TrackCardItem'
 import { WrapComponent } from '../../../../../helpers'
 import { Track } from '../../../../../../../src/Track/Domain/Track'
 import * as fixture from '../../../../../fixtures/trackFixture'
-import TrackListItemPageObject from './TrackListItemPageObject'
+import TrackCardItemPageObject from './TrackCardItemPageObject'
 
 const { track: trackFixture } = fixture
-describe('TrackListItem.vue', () => {
+describe('TrackCardItem.vue', () => {
   let wrapper
   /** @type Track */
   let track
-  /** @type TrackListItemPageObject */
+  /** @type TrackCardItemPageObject */
   let page
   beforeEach(() => {
     track = new Track(trackFixture)
-    wrapper = WrapComponent(TrackListItem).withProps({track}).mount()
-    page = new TrackListItemPageObject(wrapper)
+    wrapper = WrapComponent(TrackCardItem).withProps({track}).mount()
+    page = new TrackCardItemPageObject(wrapper)
   })
-  it('should render correct contents', () => {
+  it('should render correct contents', async () => {
+    await page.wait()
     expect(page.getAlbumTitle()).toEqual(trackFixture.album.name)
     expect(page.getTrackTitle()).toEqual(trackFixture.name)
-    expect(page.getPoster().src).toEqual(track.getSmallImage().url)
-    expect(page.getPoster().alt).toEqual('track image')
+    expect(page.getPoster()).toEqual(track.getSmallImage().url)
   })
 
   it('must receive a track as property', () => {
