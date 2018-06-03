@@ -13,6 +13,7 @@ export default (data) => {
     images,
     duration: data.duration_ms,
     name: data.name,
-    popularity: data.popularity
+    popularity: data.popularity,
+    previewUrl: data.preview_url
   })
 }

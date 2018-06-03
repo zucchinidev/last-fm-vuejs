@@ -17,4 +17,8 @@ export class Track {
   getSmallImage () {
     return this.images.find(image => image.width === availableSizes.small)
   }
+
+  getPreviewUrl () {
+    return this.previewUrl
+  }
 }

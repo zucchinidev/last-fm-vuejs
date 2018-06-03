@@ -20,7 +20,8 @@ const track = {
   duration: 237557,
   name: 'Esa Muchacha',
   popularity: 41,
-  id: '21vHk583nlNXmTU8B6UGj0'
+  id: '21vHk583nlNXmTU8B6UGj0',
+  previewUrl: 'https://p.scdn.co/mp3-preview/a1db7be86b3d256d2e1bf562460947722c1aff01?cid=555776939cf64ea6b39915cf4d5d875d'
 }
 export {
   track
