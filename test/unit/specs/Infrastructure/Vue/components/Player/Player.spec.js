@@ -3,10 +3,6 @@ import { WrapComponent } from '../../../../../helpers'
 import { Track } from '../../../../../../../src/Track/Domain/Track'
 import * as fixture from '../../../../../fixtures/trackFixture'
 import PlayerPageObject from './PlayerPageObject'
-import Vue from 'vue'
-import { Bus } from '@Vue/plugins/bus'
-
-Vue.use(Bus)
 
 const { track: trackFixture } = fixture
 describe('Player.vue', () => {
