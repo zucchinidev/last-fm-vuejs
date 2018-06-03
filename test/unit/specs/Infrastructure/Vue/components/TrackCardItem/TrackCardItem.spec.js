@@ -23,7 +23,7 @@ describe('TrackCardItem.vue', () => {
     expect(page.getPoster()).toEqual(track.getSmallImage().url)
     page.clickPlayButton()
     expect(page.isSelectTrackEventEmitted()).toBeTruthy()
-    expect(page.isSelectTrackEventEmitted()).toEqual([[track.id]])
+    expect(page.isSelectTrackEventEmitted()).toEqual([[track]])
   })
 
   it('must receive a track as property', () => {
