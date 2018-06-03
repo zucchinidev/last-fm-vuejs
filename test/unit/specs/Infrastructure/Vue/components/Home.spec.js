@@ -27,7 +27,6 @@ describe('Home.vue', () => {
     await page.wait()
     const listOfTracks = page.getListOfTracks()
     expect(listOfTracks.length).toEqual(1)
-    expect(page.getBlockQuoteTextContent()).toEqual('First, solve the problem. Then, write the code.')
     expect(TrackRepository.searchTrack).toHaveBeenCalled()
     expect(TrackRepository.searchTrack).toHaveBeenCalledWith('muchacha')
   })
