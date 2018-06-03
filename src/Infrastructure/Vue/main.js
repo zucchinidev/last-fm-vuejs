@@ -4,10 +4,9 @@ import router from './router/index'
 import { registerSharedComponents } from './components'
 import { Bus } from './plugins/bus'
 
-Vue.config.productionTip = false
-
-registerSharedComponents()
 Vue.use(Bus)
+Vue.config.productionTip = false
+registerSharedComponents()
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
