@@ -21,6 +21,9 @@ describe('TrackCardItem.vue', () => {
     expect(page.getAlbumTitle()).toEqual(trackFixture.album.name)
     expect(page.getTrackTitle()).toEqual(trackFixture.name)
     expect(page.getPoster()).toEqual(track.getSmallImage().url)
+    page.clickPlayButton()
+    expect(page.isSelectTrackEventEmitted()).toBeTruthy()
+    expect(page.isSelectTrackEventEmitted()).toEqual([[track.id]])
   })
 
   it('must receive a track as property', () => {
