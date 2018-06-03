@@ -17,6 +17,7 @@ import '../../../../node_modules/vuetify/src/stylus/app.styl'
 import ArtistListItem from './ArtistListItem/ArtistListItem'
 import TrackCardItem from './TrackCardItem/TrackCardItem'
 import Search from './Search/Search'
+import Player from './Player/Player'
 
 export function registerSharedComponents () {
   Vue.use(Vuetify, {
@@ -37,4 +38,5 @@ export function registerSharedComponents () {
   Vue.component('ArtistListItem', ArtistListItem)
   Vue.component('TrackCardItem', TrackCardItem)
   Vue.component('Search', Search)
+  Vue.component('Player', Player)
 }
