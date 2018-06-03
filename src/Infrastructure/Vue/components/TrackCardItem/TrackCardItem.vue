@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     selectTrack () {
-      this.$emit('selectTrack', this.track.id)
+      this.$emit('selectTrack', this.track)
     }
   }
 }
