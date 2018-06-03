@@ -6,8 +6,7 @@
         v-model="searchTerm"
         @input="onSearchTerm"
       ></search>
-      <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
-      <blockquote>First, solve the problem. Then, write the code.</blockquote>
+      <player :selectedTrack="selectedTrack"></player>
     </v-flex>
     <v-container v-bind="{'grid-list-lg': true}" fluid>
       <v-slide-y-transition mode="out-in">
@@ -16,7 +15,7 @@
             v-for="(track, index) in tracks"
             :key="index"
             :track="track"
-            :class="{'is-active': track.id === selectedTrack}"
+            :class="{'is-active': track.id === selectedTrack.id}"
             @selectTrack="onSelectTrack"
           ></track-card-item>
         </v-layout>
@@ -33,7 +32,7 @@ export default {
     return {
       tracks: [],
       searchTerm: '',
-      selectedTrack: ''
+      selectedTrack: {}
     }
   },
   methods: {
@@ -44,8 +43,8 @@ export default {
         this.tracks = []
       }
     },
-    onSelectTrack (id) {
-      this.selectedTrack = id
+    onSelectTrack (track) {
+      this.selectedTrack = track
     }
   }
 }
