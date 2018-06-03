@@ -73,6 +73,7 @@
 
 <script>
 export default {
+  name: 'App',
   data () {
     return {
       clipped: false,
@@ -93,7 +94,6 @@ export default {
       rightDrawer: false,
       title: 'Last FM'
     }
-  },
-  name: 'App'
+  }
 }
 </script>
