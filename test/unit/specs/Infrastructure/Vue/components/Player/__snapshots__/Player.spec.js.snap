@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Player.vue should has correct html 1`] = `
+<div class="flex xs12 sm6 offset-sm3">
+    <div class="white--text card" style="height: auto;">
+        <div class="container">
+            <div class="layout row">
+                <div class="flex xs7">
+                    <div class="card__media" style="height: 125px;">
+                        <div class="card__media__background"></div>
+                        <div class="card__media__content"></div>
+                    </div>
+                </div>
+                <div class="flex xs5">
+                    <div>
+                        <div class="headline">
+                            Esa Muchacha
+                        </div>
+                        <div>
+                            237557
+                        </div>
+                    </div>
+                    <div class="card__actions">
+                        <div class="spacer"></div>
+                        <audio src="https://p.scdn.co/mp3-preview/a1db7be86b3d256d2e1bf562460947722c1aff01?cid=555776939cf64ea6b39915cf4d5d875d" controls="controls"></audio>
+                        <div class="spacer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`;
