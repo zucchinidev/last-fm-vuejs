@@ -5,13 +5,14 @@ const availableSizes = {
 }
 
 export class Track {
-  constructor ({ album, duration, name, popularity, images, id } = {}) {
+  constructor ({ album, duration, name, popularity, images, id, previewUrl } = {}) {
     this.id = id
     this.album = album
     this.duration = duration
     this.name = name
     this.popularity = popularity
     this.images = images
+    this.previewUrl = previewUrl
   }
 
   getSmallImage () {
