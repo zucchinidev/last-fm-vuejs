@@ -1,8 +1,9 @@
 <template>
   <v-list>
     <v-list-tile
+      @click="onClickItem(item)"
       v-for="(item, index) in items"
-      :key="index" @click="">
+      :key="index">
 
       <v-list-tile-action>
         <v-icon v-html="item.icon"></v-icon>
@@ -24,6 +25,11 @@ export default {
     items: {
       type: Array,
       default: () => []
+    }
+  },
+  methods: {
+    onClickItem ({ routeName }) {
+      this.$router.push({ name: routeName })
     }
   }
 }
