@@ -2,7 +2,8 @@ import { HttpRepository } from '../../Infrastructure/http/HttpRepository'
 import trackMapper from './trackMapper'
 
 const urls = {
-  search: 'search'
+  search: 'search',
+  getById: 'tracks'
 }
 
 const configuration = {
@@ -16,5 +17,9 @@ export const TrackRepository = {
     }
     const { data } = await HttpRepository.get(urls.search, params, configuration)
     return data.tracks.items.map(trackMapper)
+  },
+  async getById (id) {
+    const { data } = await HttpRepository.get(`${urls.getById}/${id}`, {}, configuration)
+    return data
   }
 }
