@@ -29,11 +29,13 @@ export default {
       items: [
         {
           icon: 'dashboard',
-          title: 'Dashboard'
+          title: 'Dashboard',
+          routeName: 'Home'
         },
         {
           icon: 'bubble_chart',
-          title: 'Inspire'
+          title: 'Inspire',
+          routeName: 'Home'
         }
       ],
       miniVariant: false,
