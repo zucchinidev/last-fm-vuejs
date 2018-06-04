@@ -10,13 +10,26 @@
                 <div>{{track.name}}</div>
               </template>
               <template v-if="extendedData">
-                <p class="headline">Album <v-icon>arrow_right_alt</v-icon>{{track.album.name}}</p>
-                <p>Track name <v-icon>arrow_right_alt</v-icon> {{track.name}}</p>
-                <p>Release <v-icon>arrow_right_alt</v-icon> {{track.album.release}}</p>
-                <p> Popularity <v-icon>arrow_right_alt</v-icon> {{track.popularity}}</p>
+                <p class="headline">Album
+                  <v-icon>arrow_right_alt</v-icon>
+                  {{track.album.name}}
+                </p>
+                <p>Track name
+                  <v-icon>arrow_right_alt</v-icon>
+                  {{track.name}}
+                </p>
+                <p>Release
+                  <v-icon>arrow_right_alt</v-icon>
+                  {{track.album.release}}
+                </p>
+                <p> Popularity
+                  <v-icon>arrow_right_alt</v-icon>
+                  {{track.popularity}}
+                </p>
                 <div>
                   <p class="display-1 text-xs-left">
-                    Artists <v-icon>trending_down</v-icon>
+                    Artists
+                    <v-icon>trending_down</v-icon>
                   </p>
                   <ul>
                     <li
@@ -42,6 +55,9 @@
               <v-spacer></v-spacer>
               <v-btn icon @click="selectTrack">
                 <v-icon>play_arrow</v-icon>
+              </v-btn>
+              <v-btn icon @click="goToTrack">
+                <v-icon>remove_red_eye</v-icon>
               </v-btn>
               <v-spacer></v-spacer>
             </v-card-actions>
@@ -96,6 +112,9 @@ export default {
   methods: {
     selectTrack () {
       this.$emit('selectTrack', this.track)
+    },
+    goToTrack () {
+      this.$router.push({ name: 'TrackDetail', params: { id: this.track.id } })
     }
   }
 }
