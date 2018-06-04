@@ -11,7 +11,7 @@ import {
   VToolbar,
   transitions
 } from 'vuetify'
-import { VTextField, VCard } from 'vuetify/es5/components'
+import { VTextField, VCard, VChip } from 'vuetify/es5/components'
 
 import '../../../../node_modules/vuetify/src/stylus/app.styl'
 import ArtistListItem from './ArtistListItem/ArtistListItem'
@@ -37,7 +37,8 @@ export function registerSharedComponents () {
       VToolbar,
       transitions,
       VTextField,
-      VCard
+      VCard,
+      VChip
     }
   })
   Vue.component('ArtistListItem', ArtistListItem)
