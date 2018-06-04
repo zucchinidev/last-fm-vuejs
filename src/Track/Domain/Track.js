@@ -19,6 +19,10 @@ export class Track {
     return this.images.find(image => image.width === availableSizes.small)
   }
 
+  getBigImage () {
+    return this.images.find(image => image.width === availableSizes.big)
+  }
+
   getPreviewUrl () {
     return this.previewUrl
   }
