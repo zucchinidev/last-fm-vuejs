@@ -7,7 +7,7 @@ export default class PlayerPageObject extends PageObject {
   }
 
   getDuration () {
-    return Number(this.wrapper.vm.$el.querySelector('.headline + div').textContent.trim())
+    return this.wrapper.vm.$el.querySelector('.headline + div').textContent.trim()
   }
 
   getPoster () {
