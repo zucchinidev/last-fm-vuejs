@@ -5,7 +5,6 @@ exports[`Search.vue has the expected html structure 1`] = `
     <div class="input-group__input">
         <i aria-hidden="true" class="icon material-icons input-group__prepend-icon">search</i>
         <input tabindex="0" type="text">
-        <i aria-hidden="true" class="icon material-icons input-group__append-icon input-group__icon-cb input-group__icon-clearable">clear</i>
     </div>
     <div class="input-group__details">
         <!---->
