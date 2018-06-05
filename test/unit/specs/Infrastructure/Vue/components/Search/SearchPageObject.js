@@ -24,4 +24,8 @@ export class SearchPageObject extends PageObject {
   fireInputEvent () {
     this.getInputWrapper().trigger('input')
   }
+
+  fireSearch () {
+    this.wrapper.vm.search()
+  }
 }
