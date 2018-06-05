@@ -26,6 +26,6 @@ export class SearchPageObject extends PageObject {
   }
 
   triggerSearch () {
-    this.wrapper.vm.search()
+    this.getInputWrapper().trigger('keyup.enter')
   }
 }

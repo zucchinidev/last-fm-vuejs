@@ -14,6 +14,6 @@ export default class HomePageObject extends PageObject {
 
   triggerSearch () {
     const input = this.wrapper.find(Search)
-    input.vm.search()
+    input.find('input').trigger('keyup.enter')
   }
 }
