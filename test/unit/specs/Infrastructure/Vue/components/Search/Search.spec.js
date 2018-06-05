@@ -18,8 +18,8 @@ describe('Search.vue', () => {
 
   it('should correctly insert the value in the input field', () => {
     expect(page.getInputValue()).toEqual(value)
-    page.fireInputEvent()
-    page.fireSearch()
+    page.triggerInputEvent()
+    page.triggerSearch()
     expect(page.getTrimInputValue()).toEqual(value.trim())
     expect(page.getEmittedEvent('input')).toBeTruthy()
   })

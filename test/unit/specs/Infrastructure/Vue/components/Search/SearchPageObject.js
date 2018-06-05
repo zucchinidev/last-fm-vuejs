@@ -21,11 +21,11 @@ export class SearchPageObject extends PageObject {
     return this.wrapper.emitted()[event]
   }
 
-  fireInputEvent () {
+  triggerInputEvent () {
     this.getInputWrapper().trigger('input')
   }
 
-  fireSearch () {
+  triggerSearch () {
     this.wrapper.vm.search()
   }
 }
