@@ -5,10 +5,10 @@
     single-line
     full-width
     @input="setValueOfInput"
+    @keyup.enter="search"
     color="teal"
     prepend-icon="search"
     dark
-    clearable
   ></v-text-field>
 </template>
 <script>
@@ -34,7 +34,12 @@ export default {
         value = value.trim()
       }
       this.model = value
-      this.$emit('input', value)
+      if (this.model === '') {
+        this.$emit('input', this.model)
+      }
+    },
+    search () {
+      this.$emit('input', this.model)
     }
   }
 }
