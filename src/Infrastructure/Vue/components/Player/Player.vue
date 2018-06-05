@@ -16,7 +16,7 @@
                 {{selectedTrack.name}}
               </div>
               <div>
-                {{selectedTrack.duration}}
+                {{selectedTrack.duration | ms-to-mm}}
               </div>
             </div>
             <v-card-actions>
