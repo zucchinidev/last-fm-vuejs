@@ -3,6 +3,7 @@ import { WrapComponent } from '../../../../../helpers'
 import { Track } from '../../../../../../../src/Track/Domain/Track'
 import * as fixture from '../../../../../fixtures/trackFixture'
 import PlayerPageObject from './PlayerPageObject'
+import { calculateResult } from '../../../../../../../src/Infrastructure/Vue/filters/milliseconds-to-minutes'
 
 const { track: trackFixture } = fixture
 describe('Player.vue', () => {
@@ -19,7 +20,7 @@ describe('Player.vue', () => {
   it('should render correct contents', async () => {
     await page.wait()
     expect(page.getTrackName()).toEqual(trackFixture.name)
-    expect(page.getDuration()).toEqual(trackFixture.duration)
+    expect(page.getDuration()).toEqual(calculateResult(trackFixture.duration))
     expect(page.getPoster()).toEqual(selectedTrack.getSmallImage().url)
     expect(page.getAudio()).toEqual(selectedTrack.getPreviewUrl())
   })
