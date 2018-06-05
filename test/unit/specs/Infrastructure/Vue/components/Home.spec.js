@@ -24,6 +24,7 @@ describe('Home.vue', () => {
   })
   it('should render correct contents', async () => {
     page.writeSearchTermAsync('muchacha')
+    page.triggerSearch()
     await page.wait()
     const listOfTracks = page.getListOfTracks()
     expect(listOfTracks.length).toEqual(1)

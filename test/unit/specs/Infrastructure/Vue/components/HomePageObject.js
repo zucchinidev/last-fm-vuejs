@@ -8,11 +8,12 @@ export default class HomePageObject extends PageObject {
     input.vm.setValueOfInput(term)
   }
 
-  getBlockQuoteTextContent () {
-    return this.wrapper.vm.$el.querySelector('blockquote').textContent
-  }
-
   getListOfTracks () {
     return this.wrapper.findAll(TrackCardItem)
+  }
+
+  triggerSearch () {
+    const input = this.wrapper.find(Search)
+    input.vm.search()
   }
 }
