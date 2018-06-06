@@ -3,11 +3,11 @@ import { VCardMedia } from 'vuetify/es5/components/VCard'
 
 export default class TrackCardItemPageObject extends PageObject {
   getAlbumTitle () {
-    return this.wrapper.vm.$el.querySelector('.headline').textContent.trim()
+    return this.wrapper.vm.$el.querySelector('.headline p.album-name').textContent.trim()
   }
 
   getTrackTitle () {
-    return this.wrapper.vm.$el.querySelector('.headline + div').textContent.trim()
+    return this.wrapper.vm.$el.querySelector('.headline + .track-name').textContent.trim()
   }
 
   getPoster () {
