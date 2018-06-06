@@ -6,8 +6,20 @@
           <v-flex xs7>
             <div class="text-xs-center">
               <template v-if="!extendedData">
-                <div class="headline">{{track.album.name}}</div>
-                <div>{{track.name}}</div>
+                <div class="headline">
+                  <p>Album</p>
+                  <v-icon>arrow_downward</v-icon>
+                  <p class="album-name">
+                    {{track.album.name}}
+                  </p>
+                </div>
+                <p class="track-name">
+                  {{track.name}}
+                </p>
+                <p>Duration
+                  <v-icon>arrow_right_alt</v-icon>
+                  {{track.duration | ms-to-mm}}
+                </p>
               </template>
               <template v-if="extendedData">
                 <p class="headline">Album
@@ -100,8 +112,8 @@ export default {
       const defaultBreakPoints = {
         'xs12': true,
         'sm6': true,
-        'md3': true,
-        'lg3': true
+        'md4': true,
+        'lg4': true
       }
       return {
         ...defaultBreakPoints,
