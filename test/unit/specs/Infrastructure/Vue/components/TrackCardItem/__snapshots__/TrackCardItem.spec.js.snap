@@ -1,14 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TrackCardItem.vue should has correct html 1`] = `
-<div class="flex wrap xs12 sm6 md3 lg3">
+<div class="flex wrap xs12 sm6 md4 lg4">
     <div class="white--text card" style="height: auto;">
         <div class="container fluid grid-list-lg">
             <div class="layout row">
                 <div class="flex xs7">
                     <div class="text-xs-center">
-                        <div class="headline">Esa Muchacha</div>
-                        <div>Esa Muchacha</div>
+                        <div class="headline">
+                            <p>Album</p>
+                            <i aria-hidden="true" class="icon material-icons">arrow_downward</i>
+                            <p class="album-name">
+                                Esa Muchacha
+                            </p>
+                        </div>
+                        <p class="track-name">
+                            Esa Muchacha
+                        </p>
+                        <p>Duration
+                            <i aria-hidden="true" class="icon material-icons">arrow_right_alt</i>
+                            03:00
+                        </p>
                         <!---->
                     </div>
                 </div>
