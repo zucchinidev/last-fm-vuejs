@@ -16,7 +16,8 @@ function setBlur (el, binding) {
 export const previewUrlEmpty = {
   install (Vue) {
     Vue.directive('previewUrlEmpty', {
-      bind: setBlur
+      bind: setBlur,
+      componentUpdated: setBlur
     })
   }
 }
