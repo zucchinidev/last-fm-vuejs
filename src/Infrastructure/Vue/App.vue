@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <left-aside :items="items" :miniVariant="miniVariant" :drawer="drawer"></left-aside>
 
     <toolbar
