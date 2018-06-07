@@ -2,7 +2,7 @@
 
 exports[`Player.vue should has correct html 1`] = `
 <div class="flex xs12 sm6 offset-sm3">
-    <div class="white--text card" style="height: auto;">
+    <div class="card" style="height: auto;">
         <div class="container">
             <div class="layout row">
                 <div class="flex xs7">
@@ -13,7 +13,7 @@ exports[`Player.vue should has correct html 1`] = `
                 </div>
                 <div class="flex xs5">
                     <div>
-                        <div class="headline">
+                        <div class="title">
                             Esa Muchacha
                         </div>
                         <div>

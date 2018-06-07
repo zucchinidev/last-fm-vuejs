@@ -1,6 +1,6 @@
 <template>
   <v-flex xs12 sm6 offset-sm3>
-    <v-card v-if="hasTrack()" class="white--text">
+    <v-card v-if="hasTrack()">
       <v-container>
         <v-layout row>
           <v-flex xs7>
@@ -12,7 +12,7 @@
           </v-flex>
           <v-flex xs5>
             <div>
-              <div class="headline">
+              <div class="title">
                 {{selectedTrack.name}}
               </div>
               <div>
@@ -51,6 +51,6 @@ export default {
 </script>
 <style scoped>
   .card__media {
-    clip-path: circle(30%);
+    clip-path: circle(25%);
   }
 </style>
