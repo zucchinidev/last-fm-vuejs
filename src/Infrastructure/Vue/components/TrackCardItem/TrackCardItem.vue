@@ -1,14 +1,13 @@
 <template>
   <v-flex v-bind="breakPoints" wrap v-if="track && track.album">
-    <v-card class="white--text">
+    <v-card>
       <v-container fluid grid-list-lg>
         <v-layout row>
           <v-flex xs7>
             <div class="text-xs-center">
               <template v-if="!extendedData">
-                <div class="headline">
+                <div class="title">
                   <p>Album</p>
-                  <v-icon>arrow_downward</v-icon>
                   <p class="album-name">
                     {{track.album.name}}
                   </p>
@@ -22,7 +21,7 @@
                 </p>
               </template>
               <template v-if="extendedData">
-                <p class="headline">Album
+                <p class="title">Album
                   <v-icon>arrow_right_alt</v-icon>
                   {{track.album.name}}
                 </p>

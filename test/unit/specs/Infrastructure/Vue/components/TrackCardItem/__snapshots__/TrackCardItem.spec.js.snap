@@ -2,14 +2,13 @@
 
 exports[`TrackCardItem.vue should has correct html 1`] = `
 <div class="flex wrap xs12 sm6 md4 lg4">
-    <div class="white--text card" style="height: auto;">
+    <div class="card" style="height: auto;">
         <div class="container fluid grid-list-lg">
             <div class="layout row">
                 <div class="flex xs7">
                     <div class="text-xs-center">
-                        <div class="headline">
+                        <div class="title">
                             <p>Album</p>
-                            <i aria-hidden="true" class="icon material-icons">arrow_downward</i>
                             <p class="album-name">
                                 Esa Muchacha
                             </p>
