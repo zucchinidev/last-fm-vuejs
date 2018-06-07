@@ -65,7 +65,7 @@
             ></v-card-media>
             <v-card-actions v-if="!extendedData">
               <v-spacer></v-spacer>
-              <v-btn icon @click="selectTrack">
+              <v-btn class="play-arrow" icon @click="selectTrack">
                 <v-icon>play_arrow</v-icon>
               </v-btn>
               <v-btn icon @click="goToTrack">

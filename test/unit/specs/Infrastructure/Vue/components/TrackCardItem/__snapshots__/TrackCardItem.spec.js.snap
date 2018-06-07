@@ -31,7 +31,7 @@ exports[`TrackCardItem.vue should has correct html 1`] = `
                     </div>
                     <div class="card__actions">
                         <div class="spacer"></div>
-                        <button type="button" class="btn btn--icon">
+                        <button type="button" class="play-arrow btn btn--icon">
                             <div class="btn__content">
                                 <i aria-hidden="true" class="icon material-icons">play_arrow</i>
                             </div>
