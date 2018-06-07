@@ -12,6 +12,7 @@
       <v-slide-y-transition mode="out-in">
         <v-layout row wrap>
           <track-card-item
+            v-preview-url-empty="track.previewUrl"
             v-for="(track, index) in tracks"
             :key="index"
             :track="track"
