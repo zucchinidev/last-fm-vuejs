@@ -4,11 +4,27 @@ export class PreviewUrlEmptyPageObject {
   }
 
   isFilterApplied () {
-    return this.vm.$el.querySelector('.card__media').style.filter === 'blur(3px)'
+    return this.getFilterStyle() === 'blur(3px)'
+  }
+
+  getFilterStyle () {
+    return this.vm.$el.querySelector('.card__media').style.filter
   }
 
   hasCursorNotAllowed () {
-    return this.vm.$el.querySelector('.card__actions').style.cursor === 'not-allowed'
+    return this.getCursorStyle() === 'not-allowed'
+  }
+
+  getCursorStyle () {
+    return this.vm.$el.querySelector('.card__actions').style.cursor
+  }
+
+  hasDefaultFilterStyle () {
+    return this.getFilterStyle() === ''
+  }
+
+  hasInheritCursor () {
+    return this.getCursorStyle() === 'inherit'
   }
 
   hasPlayButtonDisabled () {
