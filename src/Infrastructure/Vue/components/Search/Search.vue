@@ -8,7 +8,6 @@
     @keyup.enter="search"
     color="teal"
     prepend-icon="search"
-    dark
   ></v-text-field>
 </template>
 <script>

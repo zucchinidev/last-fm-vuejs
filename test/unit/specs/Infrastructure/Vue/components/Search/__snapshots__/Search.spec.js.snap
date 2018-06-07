@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search.vue has the expected html structure 1`] = `
-<div class="input-group input-group--dirty input-group--prepend-icon theme--dark input-group--text-field input-group--single-line input-group--full-width teal--text">
+<div class="input-group input-group--dirty input-group--prepend-icon input-group--text-field input-group--single-line input-group--full-width teal--text">
     <div class="input-group__input">
         <i aria-hidden="true" class="icon material-icons input-group__prepend-icon">search</i>
         <input tabindex="0" type="text">
