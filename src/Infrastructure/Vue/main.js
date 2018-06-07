@@ -4,10 +4,12 @@ import router from './router/index'
 import { registerSharedComponents } from './components'
 import { Bus } from './plugins/bus'
 import { millisecondsToMinutes } from './filters/milliseconds-to-minutes'
+import { previewUrlEmpty } from './directives/previewUrlEmpty'
 
 Vue.use(Bus)
 Vue.config.productionTip = false
 Vue.use(millisecondsToMinutes)
+Vue.use(previewUrlEmpty)
 registerSharedComponents()
 /* eslint-disable no-new */
 new Vue({
