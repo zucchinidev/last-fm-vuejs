@@ -1,5 +1,4 @@
 import PageObject from '@unit/PageObject'
-import { VCardMedia } from 'vuetify/es5/components/VCard'
 
 export default class PlayerPageObject extends PageObject {
   getTrackName () {
@@ -7,11 +6,11 @@ export default class PlayerPageObject extends PageObject {
   }
 
   getDuration () {
-    return this.wrapper.vm.$el.querySelector('.title + div').textContent.trim()
+    return this.wrapper.vm.$el.querySelector('.title + p > span').textContent.trim()
   }
 
   getPoster () {
-    return this.wrapper.find(VCardMedia).props().src
+    return this.wrapper.vm.$el.querySelector('img').src
   }
 
   getAudio () {
