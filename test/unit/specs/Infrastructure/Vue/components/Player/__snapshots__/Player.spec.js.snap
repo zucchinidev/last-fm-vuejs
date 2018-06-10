@@ -1,31 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Player.vue should has correct html 1`] = `
-<div class="flex xs12 sm6 offset-sm3">
-    <div class="card" style="height: auto;">
-        <div class="container">
-            <div class="layout row">
-                <div class="flex xs7">
-                    <div class="card__media" style="height: 125px;">
-                        <div class="card__media__background"></div>
-                        <div class="card__media__content"></div>
-                    </div>
+<div class="container fluid">
+    <div class="layout row">
+        <div class="flex xs3">
+            <div class="track__data__container">
+                <img src="https://i.scdn.co/image/31dd0b4e46c5fb0feb1e02c2f98d07e76ca5ab6c" alt="Esa Muchacha">
+                <div>
+                    <p class="title">
+                        Esa Muchacha
+                    </p>
+                    <p>
+                        Esa Muchacha
+                        <span>03:00</span></p>
                 </div>
-                <div class="flex xs5">
-                    <div>
-                        <div class="title">
-                            Esa Muchacha
-                        </div>
-                        <div>
-                            03:00
-                        </div>
-                    </div>
-                    <div class="card__actions">
-                        <div class="spacer"></div>
-                        <audio src="https://p.scdn.co/mp3-preview/a1db7be86b3d256d2e1bf562460947722c1aff01?cid=555776939cf64ea6b39915cf4d5d875d" controls="controls"></audio>
-                        <div class="spacer"></div>
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="flex xs9">
+            <div class="audio__container">
+                <audio src="https://p.scdn.co/mp3-preview/a1db7be86b3d256d2e1bf562460947722c1aff01?cid=555776939cf64ea6b39915cf4d5d875d" controls="controls"></audio>
             </div>
         </div>
     </div>
