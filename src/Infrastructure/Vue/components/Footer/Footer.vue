@@ -1,6 +1,6 @@
 <template>
-  <v-footer :fixed="fixed" app>
-    <span>&copy; 2018</span>
+  <v-footer :fixed="fixed" height="90" app>
+    <player></player>
   </v-footer>
 </template>
 
@@ -10,9 +10,11 @@ export default {
   props: ['fixed']
 }
 </script>
-<style scoped>
-  footer span{
-    margin-left: auto;
-    margin-right: auto;
-  }
+<style lang="stylus" scoped>
+  footer.footer.footer--fixed
+    height: 90px
+    min-width: 620px
+    border-top: 1px solid #cbcbcb
+    display: flex
+    flex-direction: row
 </style>
