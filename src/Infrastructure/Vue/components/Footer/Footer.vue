@@ -12,9 +12,6 @@ export default {
 </script>
 <style lang="stylus" scoped>
   footer.footer.footer--fixed
-    height: 90px
     min-width: 620px
     border-top: 1px solid #cbcbcb
-    display: flex
-    flex-direction: row
 </style>
