@@ -6,7 +6,6 @@
         v-model="searchTerm"
         @input="onSearchTerm"
       ></search>
-      <player :selectedTrack="selectedTrack"></player>
     </v-flex>
     <v-container v-bind="{'grid-list-lg': true}" fluid>
       <v-slide-y-transition mode="out-in">
@@ -46,6 +45,7 @@ export default {
     },
     onSelectTrack (track) {
       this.selectedTrack = track
+      this.$bus.$emit('set-track', track)
     }
   }
 }
