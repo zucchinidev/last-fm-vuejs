@@ -1,18 +1,24 @@
 <template>
   <transition name="move">
     <v-footer :fixed="fixed" height="90" v-show="hasTrack" app>
-      <player></player>
+      <player :track="track"></player>
     </v-footer>
   </transition>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Footer',
   props: ['fixed'],
-  data: () => ({hasTrack: false}),
-  created () {
-    this.$bus.$on('set-track', () => (this.hasTrack = true))
+  computed: {
+    ...mapState([
+      'track'
+    ]),
+    hasTrack () {
+      return this.track.album
+    }
   }
 }
 </script>
