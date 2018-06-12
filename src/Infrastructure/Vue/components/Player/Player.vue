@@ -29,13 +29,8 @@ export default {
   name: 'Player',
   props: {
     /** @type Track */
-    selectedTrack: {
+    track: {
       type: Object
-    }
-  },
-  data () {
-    return {
-      track: {}
     }
   },
   methods: {
@@ -55,13 +50,6 @@ export default {
     },
     getPreviewUrl () {
       return this.track.getPreviewUrl()
-    }
-  },
-  created () {
-    this.$bus.$on('set-track', track => (this.track = track))
-    if (this.selectedTrack) {
-      const Ctrl = Object.getPrototypeOf(this.selectedTrack).constructor
-      this.track = Object.assign(new Ctrl(), this.selectedTrack)
     }
   }
 }
