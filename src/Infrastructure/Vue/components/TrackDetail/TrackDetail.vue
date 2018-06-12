@@ -21,17 +21,14 @@
   </v-container>
 </template>
 <script>
-import { TrackRepository } from '../../../../Track/Domain/TrackRepository'
-import trackMapper from '../../../../Track/Domain/trackMapper'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'TrackDetail',
-  data () {
-    return {
-      track: {}
-    }
-  },
   computed: {
+    ...mapState([
+      'track'
+    ]),
     breakPoints () {
       return {
         xs12: true,
@@ -44,9 +41,14 @@ export default {
       }
     }
   },
+  methods: {
+    ...mapActions(['getTrackById'])
+  },
   async created () {
-    const data = await TrackRepository.getById(this.$route.params.id)
-    this.track = trackMapper(data)
+    const id = this.$route.params.id
+    if (!this.track || !this.track.id || this.track.id !== id) {
+      this.getTrackById(id)
+    }
   }
 }
 </script>
