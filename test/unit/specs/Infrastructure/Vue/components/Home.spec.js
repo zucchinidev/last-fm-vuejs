@@ -1,8 +1,10 @@
+import Vuex from 'vuex'
 import Home from '@Vue/components/Home'
 import { TrackRepository } from '@/Track/Domain/TrackRepository'
-import { WrapComponent } from '../../../../helpers'
+import { cloneProductionStore, WrapComponent } from '../../../../helpers'
 import HomePageObject from './HomePageObject'
 import { track } from '../../../../fixtures/trackFixture'
+
 const mockTrack = track
 jest.mock('@/Track/Domain/TrackRepository', () => {
   return {
@@ -11,17 +13,25 @@ jest.mock('@/Track/Domain/TrackRepository', () => {
     }
   }
 })
+
 describe('Home.vue', () => {
   let wrapper
   /** @type HomePageObject */
   let page
+  let productionStore
+  let spy
+  beforeAll(() => (spy = jest.spyOn(console, 'error').mockImplementation(() => {})))
+
   beforeEach(() => {
-    const spy = jest.spyOn(console, 'error').mockImplementation(() => {})
     TrackRepository.searchTrack.mockClear()
-    wrapper = WrapComponent(Home).mount()
+    productionStore = cloneProductionStore()
+    const store = new Vuex.Store(productionStore)
+    wrapper = WrapComponent(Home).withStore(store).mount()
     page = new HomePageObject(wrapper)
-    spy.mockReset()
   })
+
+  afterAll(() => spy.mockReset())
+
   it('should render correct contents', async () => {
     page.writeSearchTermAsync('muchacha')
     page.triggerSearch()
