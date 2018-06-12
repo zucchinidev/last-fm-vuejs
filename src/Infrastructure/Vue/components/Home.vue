@@ -24,28 +24,32 @@
   </v-container>
 </template>
 <script>
-import { TrackRepository } from '../../../Track/Domain/TrackRepository'
+import { mapMutations, mapActions, mapState } from 'vuex'
 
 export default {
   name: 'Home',
   data () {
     return {
-      tracks: [],
       searchTerm: '',
       selectedTrack: {}
     }
   },
+  computed: {
+    ...mapState(['tracks'])
+  },
   methods: {
+    ...mapMutations(['selectTrack', 'selectTracks']),
+    ...mapActions(['searchTrack']),
     async onSearchTerm (term) {
       if (term && term.length >= 3) {
-        this.tracks = await TrackRepository.searchTrack(term)
+        this.searchTrack(term)
       } else {
-        this.tracks = []
+        this.selectTracks([])
       }
     },
     onSelectTrack (track) {
       this.selectedTrack = track
-      this.$bus.$emit('set-track', track)
+      this.selectTrack(track)
     }
   }
 }
