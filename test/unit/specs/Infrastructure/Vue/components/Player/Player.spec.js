@@ -9,24 +9,24 @@ const { track: trackFixture } = fixture
 describe('Player.vue', () => {
   let wrapper
   /** @type Track */
-  let selectedTrack
+  let track
   /** @type PlayerPageObject */
   let page
   beforeEach(() => {
-    selectedTrack = new Track(trackFixture)
-    wrapper = WrapComponent(Player).withProps({ selectedTrack }).mount()
+    track = new Track(trackFixture)
+    wrapper = WrapComponent(Player).withProps({ track }).mount()
     page = new PlayerPageObject(wrapper)
   })
   it('should render correct contents', async () => {
     await page.wait()
     expect(page.getTrackName()).toEqual(trackFixture.name)
     expect(page.getDuration()).toEqual(calculateResult(trackFixture.duration))
-    expect(page.getPoster()).toEqual(selectedTrack.getSmallImage().url)
-    expect(page.getAudio()).toEqual(selectedTrack.getPreviewUrl())
+    expect(page.getPoster()).toEqual(track.getSmallImage().url)
+    expect(page.getAudio()).toEqual(track.getPreviewUrl())
   })
 
-  it('must receive a selectedTrack as property', () => {
-    expect(wrapper.props().selectedTrack).toEqual(selectedTrack)
+  it('must receive a track as property', () => {
+    expect(wrapper.props().track).toEqual(track)
   })
 
   it('should has correct html', function () {
