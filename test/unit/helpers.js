@@ -1,5 +1,7 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import Vue from 'vue'
+import { ObjectService } from '../../src/Core/ObjectService'
+import store from '../../src/Infrastructure/Vue/store/store'
 
 export function WrapComponent (component) {
   return new Wrap(component)
@@ -64,4 +66,13 @@ export function waitSetTimeout (delay = 250) {
 
 export function stubNow (isoDate) {
   Date.now = jest.fn(() => new Date(isoDate).valueOf())
+}
+
+export function cloneProductionStore () {
+  return {
+    state: ObjectService.deepCopy(store.state),
+    actions: store.actions,
+    mutations: store.mutations,
+    getters: store.getters
+  }
 }
